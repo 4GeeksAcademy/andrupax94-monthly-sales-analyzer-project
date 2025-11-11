@@ -8,19 +8,19 @@ En este proyecto, te pondrás en el papel de un analista de datos encargado de e
 
 Sigue las siguientes instrucciones:
 
-1. Crear un nuevo repositorio haciendo fork en el [proyecto de Git](https://github.com/4GeeksAcademy/monthly-sales-analyzer-project) o [haciendo clic aquí](https://github.com/4GeeksAcademy/monthly-sales-analyzer-project/fork).
+1. Crear un nuevo repositorio haciendo fork en el [proyecto en Git](https://github.com/4GeeksAcademy/monthly-sales-analyzer-project) o [haz clic aquí](https://github.com/4GeeksAcademy/monthly-sales-analyzer-project/fork).
 2. Abre el repositorio creado recientemente en Codespace usando la [extensión del botón de Codespace](https://docs.github.com/en/codespaces/developing-in-codespaces/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository).
-3. Una vez que el VSCode del Codespace haya terminado de abrirse, comienza tu proyecto siguiendo las instrucciones a continuación.
+3. Una vez que el VSCode en Codespace haya terminado de abrirse, comienza tu proyecto siguiendo las instrucciones a continuación.
 
 </onlyfor>
 
 
 ## 📝 Instrucciones
 
-Se te ha proporcionado un archivo Python (`monthly_sales_analyzer.py`) que contiene datos de ventas de un mes para tres productos a lo largo de 20 días. Tu tarea es completar las funciones vacías para analizar estos datos utilizando habilidades básicas de Python: bucles, condicionales y estructuras de datos. Este proyecto evaluará tu capacidad para procesar y extraer información de un conjunto de datos, preparándote para conceptos de ciencia de datos.
+Se te ha proporcionado un archivo Python (`monthly_sales_analyzer.py`) que contiene datos de ventas de un mes para tres productos a lo largo de 20 días. Tu tarea consiste en completar las funciones vacías para analizar estos datos utilizando habilidades básicas de Python: bucles, condicionales y estructuras de datos. Este proyecto evaluará tu capacidad para procesar y extraer información de un conjunto de datos, preparándote para conceptos de ciencia de datos.
 
 
-- Los datos se almacenan en una variable llamada `sales_data`, una lista de 20 diccionarios. Cada diccionario representa un día y tiene:
+- Los datos se almacenan en una variable llamada `sales_data`, una lista de 20 diccionarios. Cada diccionario representa un día y contiene:
     - `"day"`: Número del día (1 a 20).
     - `"product_a"`: Ventas del Producto A.
     - `"product_b"`: Ventas del Producto B.
@@ -32,7 +32,7 @@ Ejemplo:
 {"day": 1, "product_a": 150, "product_b": 80, "product_c": 200}
 ```
 
-- Completa las cinco funciones de marcador de posición en el archivo. 
+- Completa las cinco funciones marcadas como marcadores de posición en el archivo. 
 
 - Cada función analiza los `sales_data` de una manera específica. Usa solo Python básico, sin bibliotecas externas. El archivo incluye declaraciones `print` para probar tu trabajo.
 
@@ -43,9 +43,9 @@ Ejemplo:
 - **`average_daily_sales(data, product_key)`:** Calcula el promedio de ventas diarias de un producto dado.
 
 
-- **`best_selling_day(data)`:** Encuentra el día con las ventas totales más altas (suma de los tres productos).
+- **`best_selling_day(data)`:** Identifica el día con las ventas totales más altas (suma de los tres productos).
 
-- **`days_above_threshold(data, product_key, threshold)`:** Cuenta cuántos días las ventas de un producto superaron un umbral dado. (por ejemplo, 18).
+- **`days_above_threshold(data, product_key, threshold)`:** Cuenta cuántos días las ventas de un producto superaron un umbral dado (por ejemplo, 18).
 
 - **`top_product(data)`:** Identifica qué producto (A, B o C) tuvo las ventas totales más altas.
 
@@ -55,7 +55,7 @@ Ejemplo:
     python3 monthly_sales_analyzer.py
     ```
 
-## ¿Te sientes confiado? 😎:  
+## ¿Te sientes seguro? 😎:  
 - Agrega una función para encontrar el día con las peores ventas.
 - Ordena los días por ventas totales y muestra los 3 mejores.
 - Calcula el rango (máximo - mínimo) de las ventas de un producto.
