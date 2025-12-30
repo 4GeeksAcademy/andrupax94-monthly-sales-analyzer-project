@@ -24,29 +24,93 @@ sales_data = [
 
 def total_sales_by_product(data, product_key):
     """Calculates the total sales of a specific product in 30 days."""
-    pass
-
+    total_sales=0
+    for item in data:
+        total_sales += item[product_key] 
+    return total_sales
 
 def average_daily_sales(data, product_key):
     """Calculates the average daily sales of a specific product."""
-    pass
+    total_sales=total_sales_by_product(data, product_key)
+    return total_sales/len(data)
 
 
 def best_selling_day(data):
     """Finds the day with the highest total sales."""
-    pass
-
+    highest_sales=0
+    best_day_sales=0
+    for item in data:
+        highest_sales_by_day = max(item['product_a'],item['product_b'],item['product_b'])
+        if highest_sales_by_day > highest_sales:
+            best_day_sales=item['day']
+            highest_sales= highest_sales_by_day
+    return best_day_sales
 
 def days_above_threshold(data, product_key, threshold):
     """Counts how many days the sales of a product exceeded a given threshold."""
-    pass
+    days = 0
+    for item in data:
+        if item[product_key] > threshold:
+            days+=1
+    return days
 
 
 def top_product(data):
     """Determines which product had the highest total sales in 30 days."""
-    pass
+    total_sales_product_a=total_sales_by_product(data, 'product_a')
+    total_sales_product_b=total_sales_by_product(data, 'product_b')
+    total_sales_product_c=total_sales_by_product(data, 'product_c')    
+    if total_sales_product_a > total_sales_product_b and total_sales_product_a > total_sales_product_c:
+        return 'product_a'
+    if total_sales_product_b > total_sales_product_a and total_sales_product_b > total_sales_product_c:
+        return 'product_b'
+    if total_sales_product_c > total_sales_product_a and total_sales_product_c > total_sales_product_b:
+        return 'product_c'
+
+def worst_selling_day(data):
+    """Finds the day with the worst total sales."""
+    worst_sales=0
+    worst_day_sales=0
+    for item in data:
+        worst_sales_by_day = max(item['product_a'],item['product_b'],item['product_b'])
+        if worst_sales_by_day > worst_sales:
+            worst_day_sales=item['day']
+            worst_sales= worst_sales_by_day
+    return worst_day_sales
+
+def top_3_days_with_best_sales(data):
+    """Create an array with the total sales by day regardless the product and return the top 3."""
+    result =[]
+    for item in data:
+        total_sales = item['product_a'] + item['product_b'] + item['product_c']
+        total_item = {}
+        total_item['day'] = item['day']
+        total_item['total_sales'] = total_sales
+        result.append(total_item)
+    
+    # Sort by total_sales in descending order and return top 3
+    result.sort(key=lambda x: x['total_sales'], reverse=True)
+    return result[:3]
+
+def calculate_max_min_sales_by_product(data):
+    """Calculate the range (maximum - minimum) of the sales of a product."""
+    result =[]
+    for item in data:
+        total_sales = item['product_a'] + item['product_b'] + item['product_c']
+        total_item = {}
+        total_item['day'] = item['day']
+        total_item['total_sales'] = total_sales
+        result.append(total_item)
+    
+    # Sort by total_sales in descending order and return top 3
+    result.sort(key=lambda x: x['total_sales'], reverse=True)
+    return result[:3]
 
 
+def max_and_min_sales_by_product(data, product_key):
+    """Calculates the max sales by product."""
+    data.sort(key=lambda x: x[product_key], reverse=True)
+    return data[0][product_key], data [-1][product_key]
 
 # Function tests
 print("Total sales of product_a:", total_sales_by_product(sales_data, "product_a"))
@@ -54,3 +118,8 @@ print("Average daily sales of product_b:", average_daily_sales(sales_data, "prod
 print("Day with highest total sales:", best_selling_day(sales_data))
 print("Days when product_c exceeded 300 sales:", days_above_threshold(sales_data, "product_c", 300))
 print("Product with highest total sales:", top_product(sales_data))
+print("Day with worst total sales:", worst_selling_day(sales_data))
+print("Show the days with the top 3 best total sales:", top_3_days_with_best_sales(sales_data))
+print("Show the maximum-minimum fo the sales by product a:", max_and_min_sales_by_product(sales_data, "product_a"))
+print("Show the maximum-minimum fo the sales by product b:", max_and_min_sales_by_product(sales_data, "product_b"))
+print("Show the maximum-minimum fo the sales by product c:", max_and_min_sales_by_product(sales_data, "product_c"))
