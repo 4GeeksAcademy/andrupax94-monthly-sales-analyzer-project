@@ -19,7 +19,8 @@ sales_data = [
     {"day": 17, "product_a": 188, "product_b": 109, "product_c": 163},
     {"day": 18, "product_a": 108, "product_b": 139, "product_c": 202},
     {"day": 19, "product_a": 229, "product_b": 133, "product_c": 241},
-    {"day": 20, "product_a": 210, "product_b": 57, "product_c": 324}
+    {"day": 20, "product_a": 210, "product_b": 57, "product_c": 324},
+    {"day": 21, "product_a": 210, "product_b": 57, "product_c": 324}
 ]
 
 def total_sales_by_product(data, product_key):
